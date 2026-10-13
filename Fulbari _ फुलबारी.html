@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fulbari | फुलबारी</title>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f5ea;--ink:#14231a;--muted:#46594b;--green:#1f4d2b;--gold:#f2a900;--red:#b3202a;--card:#ffffff;--line:#cfdcc6;
+--disp:'Rozha One','Noto Serif Devanagari',Georgia,serif;--body:'Mukta','Noto Sans Devanagari',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a13;--ink:#e9f0e3;--muted:#a6b8a9;--green:#7fc58f;--card:#18271d;--line:#2b4031}}
+:root[data-theme="dark"]{--bg:#0f1a13;--ink:#e9f0e3;--muted:#a6b8a9;--green:#7fc58f;--card:#18271d;--line:#2b4031}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+/* hero */
+.hero{background:linear-gradient(180deg,#1b5a9c 0%,#3d86c6 45%,#8cc3e8 78%,#ffd9a0 100%);color:#fff;position:relative;overflow:hidden;padding:2.2rem 0 0}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 9rem 2.2rem at 18% 30%,rgba(255,255,255,.85),transparent 70%),radial-gradient(ellipse 12rem 2.6rem at 70% 22%,rgba(255,255,255,.8),transparent 70%),radial-gradient(ellipse 8rem 2rem at 88% 52%,rgba(255,255,255,.7),transparent 70%),radial-gradient(ellipse 11rem 2.4rem at 35% 60%,rgba(255,255,255,.6),transparent 70%)}
+.hero>*{position:relative}
+.hero h1,.hero .en,.hero p{text-shadow:0 2px 12px rgba(10,40,80,.55)}
+.garland{display:flex;justify-content:center;gap:.15rem;margin-bottom:2rem;overflow:hidden}
+.garland i{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd75e,#f2a900 55%,#c57e00);margin-top:calc(var(--d,0)*1px);box-shadow:inset 0 0 0 3px rgba(255,255,255,.12)}
+.garland i:nth-child(3n){background:radial-gradient(circle at 35% 35%,#ff7a5c,#d63a1f 55%,#8e1f10)}
+.hero h1{font-size:clamp(4rem,19vw,10rem);letter-spacing:.01em}
+.hero .en{font-size:clamp(1.3rem,5vw,2rem);font-family:var(--disp);color:#ffd75e;margin-top:.4rem}
+.hero p{max-width:34rem;margin:1.1rem 0 1.6rem;color:#fff}
+.btn{display:inline-block;background:var(--gold);color:#2a1d00;font-weight:600;text-decoration:none;padding:.7rem 1.3rem;border-radius:.4rem;margin-right:.6rem}
+.btn.alt{background:rgba(10,40,80,.35);color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.terrace{display:block;width:100%;height:auto;margin-top:2rem}
+/* sections */
+section{padding:3.5rem 0}
+section h2{font-size:clamp(1.9rem,6vw,2.8rem);color:var(--green);margin-bottom:.5rem}
+.lead{color:var(--muted);max-width:38rem;margin:0 0 2rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.9rem}
+.slot{position:relative;aspect-ratio:4/3;border:2px dashed var(--line);border-radius:.5rem;display:grid;place-items:center;text-align:center;color:var(--muted);cursor:pointer;overflow:hidden;background:var(--card);padding:.5rem}
+.slot:nth-child(1){grid-column:span 2;aspect-ratio:auto;min-height:14rem}
+.slot input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot:focus-within{outline:3px solid var(--gold)}
+.cult{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.cult article{border-left:5px solid var(--gold);padding:.2rem 0 .2rem 1rem}
+.cult article:nth-child(even){border-color:var(--red)}
+.cult h3{font-size:1.4rem;margin-bottom:.3rem;color:var(--ink)}
+.cult p{margin:0;color:var(--muted)}
+.band{background:var(--card);border-block:1px solid var(--line)}
+.places{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.place{background:var(--bg);border:1px solid var(--line);border-radius:.5rem;padding:1.1rem}
+.place h3{font-size:1.25rem;color:var(--green);margin-bottom:.3rem}
+.place p{margin:0 0 .7rem;color:var(--muted)}
+.place a{font-weight:600;color:var(--red)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .place a{color:#ff8f94}}
+:root[data-theme="dark"] .place a{color:#ff8f94}
+.visit{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.visit div{border-top:3px solid var(--green);padding-top:.6rem}
+.visit b{display:block;font-family:var(--disp);font-weight:400;font-size:1.15rem}
+footer{background:#14231a;color:#cfdcc6;padding:2rem 0;text-align:center}
+footer .nm{font-family:var(--disp);font-size:1.6rem;color:var(--gold)}
+@media (max-width:30rem){.slot:nth-child(1){grid-column:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="garland" aria-hidden="true" id="garland"></div>
+  <div class="wrap">
+    <h1>फुलबारी</h1>
+    <div class="en">Fulbari, Nepal</div>
+    <p>A village of terraced fields, flower gardens and open doors. Come for Dashain, stay for the dal bhat.</p>
+    <a class="btn" href="#gallery">See the village</a><a class="btn alt" href="#places">Places to visit</a>
+  </div>
+  <svg class="terrace" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 Q120 20 240 55 T480 45 T800 40 V120 H0Z" fill="#2f6b3d"/>
+    <path d="M0 80 Q150 50 300 78 T560 70 T800 68 V120 H0Z" fill="#3f8a4f"/>
+    <path d="M0 102 Q200 82 400 100 T800 96 V120 H0Z" fill="#f1f5ea" class="ground"/>
+  </svg>
+</header>
+
+<section id="gallery"><div class="wrap">
+  <h2>Photos of Fulbari</h2>
+  <p class="lead">Tap a box to add a photo from your phone. To keep your photos on this page for everyone, send them to Claude in the chat and ask it to add them.</p>
+  <div class="gallery" id="gal"></div>
+</div></section>
+
+<section class="band" id="culture"><div class="wrap">
+  <h2>Culture and traditions</h2>
+  <p class="lead">Life in Fulbari follows the festival calendar and the farming seasons.</p>
+  <div class="cult">
+    <article><h3>Dashain</h3><p>The biggest festival of the year. Families gather, elders put red tika and jamara on younger ones' foreheads, and kites fill the sky.</p></article>
+    <article><h3>Tihar</h3><p>Five days of lights, marigold garlands, deusi-bhailo songs and colourful rangoli at every doorstep.</p></article>
+    <article><h3>Food</h3><p>Dal bhat with gundruk, sel roti on festival mornings, dhido, sisnu soup, and fresh milk tea from the neighbours.</p></article>
+    <article><h3>Farming life</h3><p>Rice planting in monsoon, harvest songs in autumn, and a market day where the whole village meets.</p></article>
+    <article><h3>Music and dance</h3><p>Madal drums, folk songs and group dances at weddings, jatras and village gatherings.</p></article>
+    <article><h3>Language and dress</h3><p>Nepali is spoken daily. Daura suruwal and gunyo cholo are worn for celebrations.</p></article>
+  </div>
+</div></section>
+
+<section id="places"><div class="wrap">
+  <h2>Places to visit</h2>
+  <p class="lead">Sample spots to start with. Replace them with the real places in Fulbari.</p>
+  <div class="places" id="pl"></div>
+</div></section>
+
+<section class="band" id="visit"><div class="wrap">
+  <h2>Plan your visit</h2>
+  <div class="visit">
+    <div><b>Best time</b>October to November for Dashain and Tihar, clear skies and harvest.</div>
+    <div><b>Getting here</b>Add the nearest city, bus route or road to Fulbari.</div>
+    <div><b>Stay</b>Add homestays or a contact number for local hosts.</div>
+  </div>
+</div></section>
+
+<footer><div class="nm">फुलबारी · Fulbari</div><div>Namaste. You are always welcome here.</div></footer>
+
+<script>
+(function(){
+  var g=document.getElementById('garland'),n=Math.ceil(window.innerWidth/34)+2,h='';
+  for(var i=0;i<n;i++){var x=i/(n-1);h+='<i style="--d:'+Math.round(Math.sin(x*Math.PI)*14)+'"></i>'}
+  g.innerHTML=h;
+  var labels=['Main view of Fulbari','Paddy fields','Village temple','Festival day','Local food','Village market'];
+  var gal=document.getElementById('gal');
+  labels.forEach(function(t,i){
+    var l=document.createElement('label');l.className='slot';
+    l.innerHTML='<span>+ Add photo<br><small>'+t+'</small></span><input type="file" accept="image/*" aria-label="Add photo: '+t+'">';
+    l.querySelector('input').addEventListener('change',function(e){
+      var f=e.target.files[0];if(!f)return;
+      var r=new FileReader();r.onload=function(){var im=document.createElement('img');im.src=r.result;im.alt=t;l.appendChild(im)};
+      r.readAsDataURL(f);
+    });
+    gal.appendChild(l);
+  });
+  var places=[['Village temple (mandir)','The heart of Fulbari, busy with puja during Dashain.'],['Hilltop viewpoint','Sunrise over the terraces and the hills beyond.'],['River and paddy fields','A walk along the water through green rice fields.'],['Village market','Fresh vegetables, handmade goods and local snacks.']];
+  document.getElementById('pl').innerHTML=places.map(function(p){
+    return '<div class="place"><h3>'+p[0]+'</h3><p>'+p[1]+'</p><a href="https://www.google.com/maps/search/'+encodeURIComponent(p[0]+' Fulbari Nepal')+'" target="_blank" rel="noopener">Open in Maps</a></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
